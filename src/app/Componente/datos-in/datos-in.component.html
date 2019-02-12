@@ -14,7 +14,7 @@
       <input matInput placeholder="Nombre incidencia: *" #NombreIncidencia>
     </mat-form-field>
     
-    <app-colores></app-colores>
+    <app-colores (dataOut)="getColor($event)"></app-colores>
     <br>
     <button md-mini-fab type="button" onclick="document.getElementById('fileToUpload').click()">
       <input id="fileToUpload" type="file" style="display:none;" #RutaArchivo><i class="material-icons">description</i>

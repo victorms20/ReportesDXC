@@ -10,7 +10,11 @@ import { ServicesService, Reporte } from '../../service/services.service';
 
 export class ReporteComponent implements OnInit {
   reporte:Reporte;
+  RepEliminado:Reporte;
   reportes:Reporte[];
+  contador:number = 0;
+  trobat = false
+
 
   @Input()datosProyecto: string[];
 
@@ -18,6 +22,12 @@ export class ReporteComponent implements OnInit {
 
   ngOnInit() {
     this.reportes = this.reportesService.getReportes();
+  }
+
+  onClick(reporteABorrar)
+  {  
+    this.reportes.splice(this.reportesService.buscarEnArrayRep(reporteABorrar,this.reportes), 1);
+    this.reportesService.cambioDeEstado(reporteABorrar);
   }
 
 }

@@ -1,6 +1,6 @@
 [
     {
-        "titulo": "Error de ejecucion",
+        "titulo": "Sifilis",
         "fecha": "20/10/1995",
         "ruta": "C:/Pablo/Diselxico",
         "prioridad": 1,
@@ -9,7 +9,43 @@
         "solucionado" : false
     },
     {
-        "titulo": "Funcion no acabada",
+        "titulo": "Triquinosis",
+        "fecha": "21/09/2018",
+        "ruta": "C:/Dislexia/Daltonico",
+        "prioridad": 2,
+        "funcion": "funcion caja",
+        "comentario" : "to fea",
+        "solucionado" : true
+    },
+    {
+        "titulo": "Hepatitis",
+        "fecha": "21/09/2018",
+        "ruta": "C:/Dislexia/Daltonico",
+        "prioridad": 2,
+        "funcion": "funcion caja",
+        "comentario" : "to fea",
+        "solucionado" : false
+    },
+    {
+        "titulo": "Gonorrea",
+        "fecha": "21/09/2018",
+        "ruta": "C:/Dislexia/Daltonico",
+        "prioridad": 2,
+        "funcion": "funcion caja",
+        "comentario" : "to fea",
+        "solucionado" : true
+    },
+    {
+        "titulo": "Sida",
+        "fecha": "21/09/2018",
+        "ruta": "C:/Dislexia/Daltonico",
+        "prioridad": 2,
+        "funcion": "funcion caja",
+        "comentario" : "to fea",
+        "solucionado" : true
+    },
+    {
+        "titulo": "Monolucleosis",
         "fecha": "21/09/2018",
         "ruta": "C:/Dislexia/Daltonico",
         "prioridad": 2,

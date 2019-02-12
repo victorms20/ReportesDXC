@@ -9,6 +9,8 @@ import { ServicesService, Reporte } from '../../service/services.service';
 })
 export class DatosInComponent implements OnInit {
   prioridad_default = "verde";
+  recivirEvento: string;
+  prioridadDinamica:number;
 
   selectedValue: string;
   selectedFruit: string;
@@ -28,7 +30,22 @@ export class DatosInComponent implements OnInit {
     this.funcion_error = false;
   }
 
+  getColor(e){
+    this.recivirEvento = e;
+    console.log(this.recivirEvento)
+  }
+
   AfegirReporte(tituloReporte:string, fechaReporte:Date, rutaReporte:string, funcionReporte:string, comentarioReporte:string) {
+    
+    if(this.recivirEvento == "Muy Urgente"){
+      this.prioridadDinamica = 3;
+    }
+    else if(this.recivirEvento == "Urgente"){
+      this.prioridadDinamica = 2;               
+    }else{
+      this.prioridadDinamica = 1;
+    }
+
     if (!tituloReporte || !fechaReporte || !rutaReporte || !funcionReporte) {
       if (!tituloReporte) {
        this.titulo_error = true;
@@ -47,13 +64,14 @@ export class DatosInComponent implements OnInit {
         titulo: tituloReporte,
         fecha: fechaReporte,
         ruta: rutaReporte,
-        prioridad: 1,
+        prioridad: this.prioridadDinamica,
         funcion: funcionReporte,
         comentario: comentarioReporte,
         solucionado: false
       };
 
-      this.reportesServices.addReporte(reporte);                    
+      this.reportesServices.addReporte(reporte);    
+      this.reportesServices.getReportes();                
      }                      
                      
   }
