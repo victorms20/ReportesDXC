@@ -46,9 +46,14 @@ export class ServicesService {
     this.reportes.unshift(reporte);
 }
 
-cambioDeEstado(referencia:string ):void{
+cambioDeEstado(referencia:string):void{
   let indice = this.buscarEnArrayRep(referencia, this.reportes)
-  this.reportes[indice].solucionado = true;
+  if(this.reportes[indice].solucionado == true){
+    this.reportes[indice].solucionado = false;
+  }else{
+    this.reportes[indice].solucionado = true;
+  }
+  
 }
 
 buscarEnArrayRep(referencia:string, lista:Reporte[] ):number{
