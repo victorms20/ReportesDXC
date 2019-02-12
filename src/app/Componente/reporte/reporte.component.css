@@ -1,0 +1,29 @@
+.reporte-card {
+    margin: 0 auto;
+    background-size: cover;
+    background-color: rgb(250, 140, 96);
+    max-width: 600px;
+    margin-top: 2.5%;
+}
+
+.prioridad {
+    display:flex;
+    float:right;
+    width: 25px;
+    height: 25px;
+    float: right;
+    border-radius: 17px;
+    border: 1px solid black;
+}
+
+.p1 {
+    background-color: #26E392;
+}
+
+.p2 {
+    background-color: #EEF314;
+}
+
+.p3 {
+    background-color: #F31425;
+}

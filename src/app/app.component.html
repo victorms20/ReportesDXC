@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+    <div >
+      <mat-toolbar>
+          <mat-toolbar-row>
+            <span><h1>Gestor de incidencias</h1></span>
+            <span class="example-spacer"></span>
+            <button mat-button [routerLink]="['/solucionados']">Solucionadas<mat-icon class="example-icon">done</mat-icon></button>
+            <button mat-button [routerLink]="['/porSolucionar']">Por solucionar<mat-icon class="example-icon" >bug_report</mat-icon></button>
+          </mat-toolbar-row>
+          </mat-toolbar>
+    </div>
+
+    <div fxLayout="row" fxFlexFill >
+      <div fxLayout="column" fxFlexOffset="1/2" fxFlex="70" >
+         <router-outlet></router-outlet>
+         
+         <br>
+      </div>
+      <div fxLayout="column" fxFlexOffset="1/2" fxFlex="30">
+         <app-datos-in></app-datos-in>
+      </div>
+  </div>
+</body>
+
+
+

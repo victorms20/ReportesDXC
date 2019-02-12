@@ -1,0 +1,12 @@
+import { RouterModule, Routes } from '@angular/router';
+
+import { ReporteComponent } from './Componente/reporte/reporte.component';
+import {ReporteSolucionadoComponent} from './Componente/reporte-solucionado/reporte-solucionado.component'
+
+const APP_ROUTES: Routes = [
+  {path: '', component: ReporteComponent},
+  {path: 'solucionados', component: ReporteSolucionadoComponent},
+  {path: 'porSolucionar', component: ReporteComponent}
+];
+
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

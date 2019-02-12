@@ -1,0 +1,40 @@
+
+<mat-card class="formulario-principal">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Nombre del proyecto: *" #NombreProyecto>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Elige una fecha *" #FechaIncidencia>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Nombre incidencia: *" #NombreIncidencia>
+    </mat-form-field>
+    
+    <app-colores></app-colores>
+    <br>
+    <button md-mini-fab type="button" onclick="document.getElementById('fileToUpload').click()">
+      <input id="fileToUpload" type="file" style="display:none;" #RutaArchivo><i class="material-icons">description</i>
+    </button>
+ 
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Codigo: *" #CodigoIncidencia></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Comentarios:" #ComentarioIncidencia></textarea>
+    </mat-form-field>
+    <div class="footer">
+      <button class="buttonColor" mat-button (click)="AfegirReporte(NombreProyecto.value, FechaIncidencia.value, RutaArchivo.value, CodigoIncidencia.value, ComentarioIncidencia.value)" type="submit">Añadir</button>
+      <div class="error" *ngIf="titulo_error ||  fecha_error || ruta_error || funcion_error">
+        <p>Faltan campos por rellenar</p>
+      </div>
+    </div>
+  </form>
+</mat-card>
+
+
+

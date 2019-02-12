@@ -1,0 +1,20 @@
+[
+    {
+        "titulo": "Error de ejecucion",
+        "fecha": "20/10/1995",
+        "ruta": "C:/Pablo/Diselxico",
+        "prioridad": 1,
+        "funcion": "funcion patata",
+        "comentario" : "to guapo",
+        "solucionado" : false
+    },
+    {
+        "titulo": "Funcion no acabada",
+        "fecha": "21/09/2018",
+        "ruta": "C:/Dislexia/Daltonico",
+        "prioridad": 2,
+        "funcion": "funcion caja",
+        "comentario" : "to fea",
+        "solucionado" : false
+    }
+]

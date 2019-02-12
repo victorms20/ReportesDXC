@@ -1,0 +1,38 @@
+.formulario-principal {
+  margin-top: 5% !important;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin:0 auto;
+}
+
+.formulario-principal form mat-form-field {
+  width: 100%;
+}
+
+.example-form {
+    width: 100%;
+    height: 100%;
+}
+
+.buttonColor {
+  background-color: lightslategray
+}
+
+.footer {
+  display: flex;
+  height:auto;
+  width: auto;
+}
+
+.error {
+  width: 60%;
+  height:auto;
+  margin:0 auto;
+  border: solid 1px black;
+  border-radius: 5%;
+  background-color: crimson;
+  color:white;
+  text-align: center;
+  font-size: 12px;
+}
