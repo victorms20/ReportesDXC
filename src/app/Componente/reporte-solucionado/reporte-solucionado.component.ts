@@ -18,4 +18,8 @@ export class ReporteSolucionadoComponent implements OnInit {
     this.reportes = this.reportesService.getReportes();
   }
 
+  onClick(reporteABorrar){
+    this.reportes.splice(this.reportesService.buscarEnArrayRep(reporteABorrar,this.reportes), 1);
+    this.reportesService.cambioDeEstado(reporteABorrar);
+  }
 }

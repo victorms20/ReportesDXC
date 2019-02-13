@@ -1,21 +1,21 @@
-<mat-card class="reporte-card" *ngFor="let reporte of reportes">
-    <div class="prioridad p1" *ngIf="reporte.prioridad == 1"></div>
-    <div class="prioridad p2" *ngIf="reporte.prioridad == 2"></div>
-    <div class="prioridad p3" *ngIf="reporte.prioridad == 3"></div>
-<div class="convertpdf">
-  <mat-card-header>
-    <mat-card-title >{{reporte.titulo}}</mat-card-title>   
-    <mat-card-subtitle>{{reporte.fecha}}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content >
-    <b>{{reporte.funcion}}</b>
-    <br>
-    <p>{{reporte.comentario}}</p>
-    <p>Ruta: {{reporte.ruta}}</p>
-    <p></p>
-  </mat-card-content>
-</div> 
-  <mat-card-actions>
-    <button mat-button (click)="convert()">PDF <mat-icon class="example-icon">save_alt</mat-icon ></button>
-    <button mat-button>Eliminar <mat-icon class="example-icon">delete</mat-icon ></button>  </mat-card-actions>
-</mat-card>
+
+  <mat-card class="reporte-card" *ngFor="let reporte of reportes">
+      <div class="prioridad p1" *ngIf="reporte.prioridad == 1"></div>
+      <div class="prioridad p2" *ngIf="reporte.prioridad == 2"></div>
+      <div class="prioridad p3" *ngIf="reporte.prioridad == 3"></div>
+    <mat-card-header>
+      <mat-card-title>{{reporte.titulo}}</mat-card-title>   
+      <mat-card-subtitle>{{reporte.fecha}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content >
+      <b>{{reporte.funcion}}</b>
+      <br>
+      <p>{{reporte.comentario}}</p>
+
+      <p>Ruta: {{reporte.ruta}}</p>
+      <p></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>PDF <mat-icon class="example-icon">save_alt</mat-icon ></button>
+      <button mat-button (click)="onClick(reporte.titulo)">Solucionar <mat-icon class="example-icon">done</mat-icon ></button>  </mat-card-actions>
+  </mat-card>

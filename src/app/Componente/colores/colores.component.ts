@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-colores',
@@ -6,11 +6,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColoresComponent{
 
+  @Output() dataOut = new EventEmitter()
   constructor() { }
 
   selectedValue: string;
   selectedFruit: string;
 
-  colors: String[] = ["Poco urgente","Urgente","muy Urgente"];
-
+  colors: String[] = ["Poco urgente","Urgente","Muy Urgente"];
+  
+  enviaColor(colorEnviado){
+    this.dataOut.emit(colorEnviado)
+    
+  }
 }

@@ -1,5 +1,5 @@
 <mat-form-field>
-    <mat-select placeholder="Favorite color" [(ngModel)]="ColoresComponent" name="color">
+    <mat-select placeholder="Favorite color" [(ngModel)]="ColoresComponent" name="color" (selectionChange)=enviaColor(ColoresComponent)>
         <mat-option *ngFor="let color of colors" [value]="color">
           {{color}}
         </mat-option>
