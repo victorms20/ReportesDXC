@@ -6,6 +6,10 @@
   margin:0 auto;
 }
 
+.mat-form-field input {
+  pointer-events:none;
+}
+
 .formulario-principal form mat-form-field {
   width: 100%;
 }

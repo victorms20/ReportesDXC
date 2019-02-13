@@ -4,6 +4,7 @@
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Nombre del proyecto: *" #NombreProyecto>
     </mat-form-field>
+
     <mat-form-field>
       <input matInput [matDatepicker]="picker" placeholder="Elige una fecha *" #FechaIncidencia>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -16,8 +17,9 @@
     
     <app-colores></app-colores>
     <br>
+    Ruta archivo: 
     <button md-mini-fab type="button" onclick="document.getElementById('fileToUpload').click()">
-      <input id="fileToUpload" type="file" style="display:none;" #RutaArchivo><i class="material-icons">description</i>
+     <input id="fileToUpload" type="file" style="display:none;" #RutaArchivo><i class="material-icons">description</i>
     </button>
  
     <mat-form-field class="example-full-width">
