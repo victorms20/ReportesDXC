@@ -17,6 +17,9 @@ export class ReporteSolucionadoComponent implements OnInit {
   ngOnInit() {
     this.reportes = this.reportesService.getReportes();
   }
+  convert(reporteAExportar) {
+    this.reportesService.convert(reporteAExportar)
+  }
 
   onClick(reporteABorrar){
     this.reportes.splice(this.reportesService.buscarEnArrayRep(reporteABorrar,this.reportes), 1);
