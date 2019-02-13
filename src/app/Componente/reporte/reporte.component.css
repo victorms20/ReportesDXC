@@ -27,3 +27,15 @@
 .p3 {
     background-color: #F31425;
 }
+
+.buscador {
+    display: flex;
+    margin-top:10px;
+}
+
+.input-buscador {
+    margin: 0 auto;
+    height: 100%;
+    width: 400px;
+    border:solid 1px black;
+}

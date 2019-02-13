@@ -79,4 +79,3 @@ export interface Reporte {
   comentario:string;
   solucionado:boolean;
 }
-

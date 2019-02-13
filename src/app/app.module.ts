@@ -28,6 +28,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ReporteSolucionadoComponent } from './Componente/reporte-solucionado/reporte-solucionado.component';
 import { ColoresComponent } from './Componente/colores/colores.component';
+import { FilterPipe} from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ColoresComponent } from './Componente/colores/colores.component';
     ReporteComponent,
     DatosInComponent,
     ReporteSolucionadoComponent,
-    ColoresComponent
+    ColoresComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
