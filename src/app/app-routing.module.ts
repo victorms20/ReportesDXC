@@ -6,7 +6,8 @@ import {ReporteSolucionadoComponent} from './Componente/reporte-solucionado/repo
 const APP_ROUTES: Routes = [
   {path: '', component: ReporteComponent},
   {path: 'solucionados', component: ReporteSolucionadoComponent},
-  {path: 'porSolucionar', component: ReporteComponent}
+  {path: 'porSolucionar', component: ReporteComponent},
+  { path: '**', pathMatch: 'full', redirectTo: 'receptes'}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

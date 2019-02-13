@@ -4,11 +4,11 @@
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Nombre del proyecto: *" #NombreProyecto>
     </mat-form-field>
-
+    
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Elige una fecha *" #FechaIncidencia>
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+      <input matInput [matDatepicker]="dp3" placeholder="Input disabled" #FechaIncidencia disabled>
+      <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+      <mat-datepicker #dp3 disabled="false"></mat-datepicker>
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
