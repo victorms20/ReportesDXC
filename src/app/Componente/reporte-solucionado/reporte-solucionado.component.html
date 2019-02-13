@@ -11,6 +11,6 @@
     <p></p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>PDF <mat-icon class="example-icon">save_alt</mat-icon ></button>
+    <button mat-button (click)="convert(reporte.titulo)">PDF <mat-icon class="example-icon">save_alt</mat-icon ></button>
     <button (click)="onClick(reporte.titulo)" mat-button>Revertir <mat-icon class="example-icon">arrow_right_alt</mat-icon ></button>  </mat-card-actions>
 </mat-card>
