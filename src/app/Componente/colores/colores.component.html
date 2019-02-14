@@ -1,4 +1,4 @@
-<mat-form-field>
+<mat-form-field class="colores">
     <mat-select placeholder="Elige una prioridad:" [(ngModel)]="ColoresComponent" name="color" (selectionChange)=enviaColor(ColoresComponent)>
         <mat-option *ngFor="let color of colors" [value]="color">
           {{color}}

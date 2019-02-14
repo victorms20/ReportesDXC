@@ -27,6 +27,9 @@ export class ReporteComponent implements OnInit {
     this.reportesService.convert(reporteAExportar)
   }
   
+  color(numero:number) {
+    console.log(numero);
+  }
  
   onClick(reporteABorrar)
   {  

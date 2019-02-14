@@ -26,9 +26,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatMenuModule} from '@angular/material/menu';
 import { ReporteSolucionadoComponent } from './Componente/reporte-solucionado/reporte-solucionado.component';
 import { ColoresComponent } from './Componente/colores/colores.component';
 import { FilterPipe} from './filter.pipe';
+import { MenuComponent } from './Componente/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { FilterPipe} from './filter.pipe';
     DatosInComponent,
     ReporteSolucionadoComponent,
     ColoresComponent,
-    FilterPipe
+    FilterPipe,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { FilterPipe} from './filter.pipe';
     ReactiveFormsModule,
     FormsModule,
     APP_ROUTING,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule
   ],
   providers: [
     MatDatepickerModule,

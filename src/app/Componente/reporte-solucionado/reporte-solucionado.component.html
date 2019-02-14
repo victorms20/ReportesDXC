@@ -1,4 +1,8 @@
-<mat-card class="reporte-card" *ngFor="let reporte of reportes">
+<div class="buscador">
+  <input class="input-buscador" [(ngModel)]="searchText" placeholder="Buscar titulo">
+</div>
+
+<mat-card class="reporte-card" *ngFor="let reporte of reportes | filter : searchText">
   <mat-card-header>
     <mat-card-title >{{reporte.titulo}}</mat-card-title>
     <mat-card-subtitle>{{reporte.fecha}}</mat-card-subtitle>
