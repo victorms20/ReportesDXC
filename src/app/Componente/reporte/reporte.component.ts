@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import * as jsPDF from 'jspdf';
-import { ServicesService, Reporte } from '../../service/services.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {Reporte, ServicesService} from '../../service/services.service';
 
 @Component({
   selector: 'app-reporte',
@@ -9,31 +8,32 @@ import { ServicesService, Reporte } from '../../service/services.service';
 })
 
 export class ReporteComponent implements OnInit {
-  reporte:Reporte;
-  RepEliminado:Reporte;
-  reportes:Reporte[];
-  contador:number = 0;
-  trobat = false
+  reporte: Reporte;
+  RepEliminado: Reporte;
+  reportes: Reporte[];
+  contador: number = 0;
+  trobat = false;
 
 
-  @Input()datosProyecto: string[];
+  @Input() datosProyecto: string[];
 
-  constructor(private reportesService:ServicesService) { }
+  constructor(private reportesService: ServicesService) {
+  }
 
   ngOnInit() {
     this.reportes = this.reportesService.getReportes();
   }
+
   convert(reporteAExportar) {
-    this.reportesService.convert(reporteAExportar)
+    this.reportesService.convert(reporteAExportar);
   }
-  
-  color(numero:number) {
+
+  color(numero: number) {
     console.log(numero);
   }
- 
-  onClick(reporteABorrar)
-  {  
-    this.reportes.splice(this.reportesService.buscarEnArrayRep(reporteABorrar,this.reportes), 1);
+
+  onClick(reporteABorrar) {
+    this.reportes.splice(this.reportesService.buscarEnArrayRep(reporteABorrar, this.reportes), 1);
     this.reportesService.cambioDeEstado(reporteABorrar);
   }
 
