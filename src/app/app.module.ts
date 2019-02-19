@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { APP_ROUTING } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-
 /*Materials*/
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 /*Animaciones*/ 
@@ -12,7 +11,6 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 /*FxFlex*/ 
 import {FlexLayoutModule} from '@angular/flex-layout';
 /*Base de datos*/
-import { HttpClientModule } from '@angular/common/http';
 import { AdunitService } from './adunit.service';
 /*Servicios*/
 import { ServicesService } from './service/services.service';
@@ -29,15 +27,22 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ReporteSolucionadoComponent } from './Componente/reporte-solucionado/reporte-solucionado.component';
 import { ColoresComponent } from './Componente/colores/colores.component';
 import { FilterPipe} from './filter.pipe';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment'
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+
+
 
 @NgModule({
+ 
   declarations: [
     AppComponent,
     ReporteComponent,
     DatosInComponent,
     ReporteSolucionadoComponent,
     ColoresComponent,
-    FilterPipe
+    FilterPipe,
+
   ],
   imports: [
     BrowserModule,
@@ -55,12 +60,15 @@ import { FilterPipe} from './filter.pipe';
     ReactiveFormsModule,
     FormsModule,
     APP_ROUTING,
-    MatSelectModule
+    MatSelectModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'incidencias'),
+    AngularFirestoreModule   
   ],
   providers: [
     MatDatepickerModule,
     ServicesService,
-    AdunitService
+    AdunitService,
+    AngularFireModule,
   ],
   bootstrap: [AppComponent]
 })

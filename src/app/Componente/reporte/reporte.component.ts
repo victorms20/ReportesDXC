@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as jsPDF from 'jspdf';
 import { ServicesService, Reporte } from '../../service/services.service';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-reporte',
@@ -9,19 +10,21 @@ import { ServicesService, Reporte } from '../../service/services.service';
 })
 
 export class ReporteComponent implements OnInit {
-  reporte:Reporte;
-  RepEliminado:Reporte;
-  reportes:Reporte[];
-  contador:number = 0;
-  trobat = false
+
+  public reporte:Reporte;
+  public RepEliminado:Reporte;
+  public reportes;
+  public contador:number = 0;
+  public trobat = false;
+  public timer;
 
 
   @Input()datosProyecto: string[];
 
   constructor(private reportesService:ServicesService) { }
 
-  ngOnInit() {
-    this.reportes = this.reportesService.getReportes();
+  ngOnInit() {   
+   this.reportes = this.reportesService.getReportes(); 
   }
   convert(reporteAExportar) {
     this.reportesService.convert(reporteAExportar)

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ServicesService, Reporte } from '../../service/services.service';
+import { Services } from '@angular/core/src/view';
 
 @Component({
   selector: 'app-datos-in',
@@ -16,23 +17,27 @@ export class DatosInComponent implements OnInit {
   selectedFruit: string;
   color:String[] = ["verde","amarillo","rojo"];
 
-  titulo_error = false;
-  fecha_error = false;
+  titulo_error = false;  fecha_error = false;
   ruta_error = false;
   funcion_error = false;
-
   constructor(private reportesServices:ServicesService) { }
 
   ngOnInit() {
+    let test: any
     this.titulo_error = false;
     this.fecha_error = false;
     this.ruta_error = false;
-    this.funcion_error = false;
+    this.funcion_error = false;0
+    this.reportesServices.reportess.subscribe(
+      data => {
+        test = data;
+        this.reportesServices.setReporters(test);
+      });
+      
   }
 
   getColor(e){
     this.recivirEvento = e;
-    console.log(this.recivirEvento)
   }
 
   AfegirReporte(tituloReporte:string, fechaReporte:Date, rutaReporte:string, funcionReporte:string, comentarioReporte:string) {
@@ -71,7 +76,7 @@ export class DatosInComponent implements OnInit {
       };
 
       this.reportesServices.addReporte(reporte);    
-      this.reportesServices.getReportes();                
+      this.reportesServices.getReportes();      
      }                      
                      
   }

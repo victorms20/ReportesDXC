@@ -1,27 +1,56 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 //Archivo json
 import _reportes from "../archivos json/reportes.json";
 import _vacio from "../archivos json/vacio.json";
 //Exportador pdf
 import * as jsPDF from 'jspdf';
+//firebase
+
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {Observable} from 'rxjs'
+import {Subject} from 'rxjs'
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicesService {
-  private reportes;
-  private reportesMargis;
+  public reportes;
+  public coleccionReporte: AngularFirestoreCollection<Reporte>;
+  public reportess: Observable<Reporte[]>;
+  public reportesMargis;
+  public reportesDoc: AngularFirestoreDocument<Reporte>;
+  public ColeccionDeReportes;
+  public Reporte;
   
-  constructor() { 
-    this.setReportes();
+  constructor(public firebase:AngularFirestore) { 
+  this.reportess = firebase.collection('reporte').valueChanges();
+
+  }
+    
+  getReporters(){
+    return this.reportes
   }
 
-  private setReportes() {
-    this.reportes = _reportes;
+  setReporters(data){
+    this.reportes  = [];
+    for(let i = 0; i < data.length; i++)
+    {
+      let reporte:Reporte = {
+        titulo: data[i].titulo,
+        fecha: data[i].fecha,
+        ruta: data[i].ruta,
+        prioridad: data[i].prioridad,
+        funcion: data[i].funcion,
+        comentario: data[i].comentario,
+        solucionado: data[i].solucionado    
+      };
+      this.reportes.push(reporte)
+    }  
   }
-
-  getReportes():Reporte[] {
+ 
+  
+  public getReportes(){
     this.reportesMargis = [];
     let ruta:string = window.location.pathname; 
     
@@ -46,6 +75,8 @@ export class ServicesService {
 
   addReporte(reporte:Reporte):void {
     this.reportes.unshift(reporte);
+    this.firebase.collection('reporte').add(reporte)
+    console.log(this.reportes)
 }
 
 cambioDeEstado(referencia:string):void{
@@ -57,6 +88,9 @@ cambioDeEstado(referencia:string):void{
   }
   
 }
+
+
+
 
 convert(reporteAExportar) {
   let linea = " "
@@ -133,14 +167,16 @@ buscarEnArrayRep(referencia:string, lista:Reporte[] ):number{
   return contador
 }
 
+
+
 }
 
 export interface Reporte {
-  titulo:string;
-  fecha:Date;
-  ruta:string;
-  prioridad:number;
-  funcion:string;
-  comentario:string;
-  solucionado:boolean;
+  titulo?:string;
+  fecha?:Date;
+  ruta?:string;
+  prioridad?:number;
+  funcion?:string;
+  comentario?:string;
+  solucionado?:boolean;
 }

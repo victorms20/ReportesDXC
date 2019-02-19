@@ -6,7 +6,7 @@
     </mat-form-field>
     
     <mat-form-field>
-      <input matInput [matDatepicker]="dp3" placeholder="Input disabled" #FechaIncidencia disabled>
+      <input matInput [matDatepicker]="dp3" placeholder="Fecha" #FechaIncidencia disabled>
       <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
       <mat-datepicker #dp3 disabled="false"></mat-datepicker>
     </mat-form-field>
@@ -21,6 +21,7 @@
     <button md-mini-fab type="button" onclick="document.getElementById('fileToUpload').click()">
      <input id="fileToUpload" type="file" style="display:none;" #RutaArchivo><i class="material-icons">description</i>
     </button>
+    <button (click)="test()">dame caña</button>
  
     <mat-form-field class="example-full-width">
         <textarea matInput placeholder="Codigo: *" #CodigoIncidencia></textarea>
