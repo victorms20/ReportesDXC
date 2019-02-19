@@ -28,15 +28,12 @@ import { MatMenuModule} from '@angular/material/menu';
 import { ReporteSolucionadoComponent } from './Componente/reporte-solucionado/reporte-solucionado.component';
 import { ColoresComponent } from './Componente/colores/colores.component';
 import { FilterPipe} from './filter.pipe';
-<<<<<<< .mine
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment'
 import {AngularFirestoreModule} from '@angular/fire/firestore';
-=======
 import { MenuComponent } from './Componente/menu/menu.component';
 
 
->>>>>>> .theirs
 
 
 
@@ -48,13 +45,8 @@ import { MenuComponent } from './Componente/menu/menu.component';
     DatosInComponent,
     ReporteSolucionadoComponent,
     ColoresComponent,
-<<<<<<< .mine
-    FilterPipe,
-
-=======
     FilterPipe,
     MenuComponent
->>>>>>> .theirs
   ],
   imports: [
     BrowserModule,
@@ -72,15 +64,10 @@ import { MenuComponent } from './Componente/menu/menu.component';
     ReactiveFormsModule,
     FormsModule,
     APP_ROUTING,
-<<<<<<< .mine
     MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'incidencias'),
-    AngularFirestoreModule   
-=======
-    MatSelectModule,
+    AngularFirestoreModule,   
     MatMenuModule
-
->>>>>>> .theirs
   ],
   providers: [
     MatDatepickerModule,

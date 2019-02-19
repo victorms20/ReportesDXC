@@ -9,19 +9,6 @@ import { timer } from 'rxjs';
 })
 
 export class ReporteComponent implements OnInit {
-<<<<<<< .mine
-
-
-
-
-
-=======
-  reporte: Reporte;
-  RepEliminado: Reporte;
-  reportes: Reporte[];
-  contador: number = 0;
-  trobat = false;
->>>>>>> .theirs
 
   public reporte:Reporte;
   public RepEliminado:Reporte;
@@ -30,19 +17,15 @@ export class ReporteComponent implements OnInit {
   public trobat = false;
   public timer;
 
-<<<<<<< .mine
 
   @Input()datosProyecto: string[];
-=======
-  @Input() datosProyecto: string[];
 
->>>>>>> .theirs
 
   constructor(private reportesService: ServicesService) {
   }
 
   ngOnInit() {   
-   this.reportes = this.reportesService.getReportes(); 
+   setTimeout(()=>this.reportes = this.reportesService.getReportes() , 500); 
   }
 
   convert(reporteAExportar) {

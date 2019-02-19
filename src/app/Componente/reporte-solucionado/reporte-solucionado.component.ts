@@ -15,7 +15,7 @@ export class ReporteSolucionadoComponent implements OnInit {
   constructor(private reportesService:ServicesService) { }
 
   ngOnInit() {
-    this.reportes = this.reportesService.getReportes();
+    setTimeout(()=>this.reportes = this.reportesService.getReportes() , 500); 
   }
   convert(reporteAExportar) {
     this.reportesService.convert(reporteAExportar)
