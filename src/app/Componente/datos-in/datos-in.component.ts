@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ServicesService, Reporte } from '../../service/services.service';
+<<<<<<< .mine
 import { Services } from '@angular/core/src/view';
+=======
+import { FormGroup } from '@angular/forms';
+>>>>>>> .theirs
 
 @Component({
   selector: 'app-datos-in',
@@ -12,6 +16,8 @@ export class DatosInComponent implements OnInit {
   prioridad_default = "verde";
   recivirEvento: string;
   prioridadDinamica:number;
+
+  active:boolean = true;
 
   selectedValue: string;
   selectedFruit: string;
@@ -38,6 +44,16 @@ export class DatosInComponent implements OnInit {
 
   getColor(e){
     this.recivirEvento = e;
+<<<<<<< .mine
+
+=======
+    console.log(this.recivirEvento);
+>>>>>>> .theirs
+  }
+
+  clear() {
+    this.active = false;
+    setTimeout(() => this.active = true, 0);
   }
 
   AfegirReporte(tituloReporte:string, fechaReporte:Date, rutaReporte:string, funcionReporte:string, comentarioReporte:string) {
@@ -75,7 +91,7 @@ export class DatosInComponent implements OnInit {
         solucionado: false
       };
 
-      this.reportesServices.addReporte(reporte);    
+      this.reportesServices.addReporte(reporte);  
       this.reportesServices.getReportes();      
      }                      
                      

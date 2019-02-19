@@ -1,21 +1,16 @@
-
 <mat-card class="formulario-principal">
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Nombre del proyecto: *" #NombreProyecto>
+  <form class="example-form" (ngSubmit)="clear()" *ngIf="active">
+    <mat-form-field class="example-full-width" >
+      <input matInput placeholder="Nombre del proyecto: *" #NombreProyecto >
     </mat-form-field>
-    
+
     <mat-form-field>
       <input matInput [matDatepicker]="dp3" placeholder="Fecha" #FechaIncidencia disabled>
       <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
       <mat-datepicker #dp3 disabled="false"></mat-datepicker>
     </mat-form-field>
-  
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Nombre incidencia: *" #NombreIncidencia>
-    </mat-form-field>
     
-    <app-colores (dataOut)="getColor($event)"></app-colores>
+    <app-colores (dataOut)="getColor($event)" class="hola"></app-colores>
     <br>
     Ruta archivo: 
     <button md-mini-fab type="button" onclick="document.getElementById('fileToUpload').click()">
@@ -24,7 +19,7 @@
     <button (click)="test()">dame caña</button>
  
     <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Codigo: *" #CodigoIncidencia></textarea>
+        <textarea matInput placeholder="Codigo: *" #CodigoIncidencia [ngModel]="valoresGenerales" [ngModelOptions]="{standalone: true}"></textarea>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">

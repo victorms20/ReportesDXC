@@ -3,9 +3,27 @@
 </div>
 
 <mat-card class="reporte-card" *ngFor="let reporte of reportes | filter : searchText">
-  <div class="prioridad p1" *ngIf="reporte.prioridad == 1"></div>
-  <div class="prioridad p2" *ngIf="reporte.prioridad == 2"></div>
-  <div class="prioridad p3" *ngIf="reporte.prioridad == 3"></div>
+  <button mat-button [matMenuTriggerFor]="menu" class="prioridad p1" *ngIf="reporte.prioridad == 1">
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="color(reporte.prioridad = 1)">Poco Urgente</button>
+      <button mat-menu-item (click)="color(reporte.prioridad = 2)">Urgente</button>
+      <button mat-menu-item (click)="color(reporte.prioridad = 3)">Muy Urgente</button>
+    </mat-menu>
+  </button>
+  <button mat-button [matMenuTriggerFor]="menu" class="prioridad p2" *ngIf="reporte.prioridad == 2">
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="color(reporte.prioridad = 1)">Poco Urgente</button>
+      <button mat-menu-item (click)="color(reporte.prioridad = 2)">Urgente</button>
+      <button mat-menu-item (click)="color(reporte.prioridad = 3)">Muy Urgente</button>
+    </mat-menu>
+  </button>
+  <button mat-button [matMenuTriggerFor]="menu" class="prioridad p3" *ngIf="reporte.prioridad == 3">
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="color(reporte.prioridad = 1)">Poco Urgente</button>
+      <button mat-menu-item (click)="color(reporte.prioridad = 2)">Urgente</button>
+      <button mat-menu-item (click)="color(reporte.prioridad = 3)">Muy Urgente</button>
+    </mat-menu>
+  </button>
 <mat-card-header>
   <mat-card-title>{{reporte.titulo}}</mat-card-title>   
   <mat-card-subtitle>{{reporte.fecha}}</mat-card-subtitle>

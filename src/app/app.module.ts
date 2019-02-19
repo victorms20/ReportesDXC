@@ -24,12 +24,19 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatMenuModule} from '@angular/material/menu';
 import { ReporteSolucionadoComponent } from './Componente/reporte-solucionado/reporte-solucionado.component';
 import { ColoresComponent } from './Componente/colores/colores.component';
 import { FilterPipe} from './filter.pipe';
+<<<<<<< .mine
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment'
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+=======
+import { MenuComponent } from './Componente/menu/menu.component';
+
+
+>>>>>>> .theirs
 
 
 
@@ -41,8 +48,13 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     DatosInComponent,
     ReporteSolucionadoComponent,
     ColoresComponent,
+<<<<<<< .mine
     FilterPipe,
 
+=======
+    FilterPipe,
+    MenuComponent
+>>>>>>> .theirs
   ],
   imports: [
     BrowserModule,
@@ -60,9 +72,15 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     ReactiveFormsModule,
     FormsModule,
     APP_ROUTING,
+<<<<<<< .mine
     MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'incidencias'),
     AngularFirestoreModule   
+=======
+    MatSelectModule,
+    MatMenuModule
+
+>>>>>>> .theirs
   ],
   providers: [
     MatDatepickerModule,

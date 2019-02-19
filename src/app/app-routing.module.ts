@@ -4,7 +4,7 @@ import { ReporteComponent } from './Componente/reporte/reporte.component';
 import {ReporteSolucionadoComponent} from './Componente/reporte-solucionado/reporte-solucionado.component'
 
 const APP_ROUTES: Routes = [
-  {path: '', component: ReporteComponent},
+  {path: '', component: ReporteSolucionadoComponent},
   {path: 'solucionados', component: ReporteSolucionadoComponent},
   {path: 'porSolucionar', component: ReporteComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'receptes'}

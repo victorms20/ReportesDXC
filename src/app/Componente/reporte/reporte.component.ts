@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import * as jsPDF from 'jspdf';
-import { ServicesService, Reporte } from '../../service/services.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {Reporte, ServicesService} from '../../service/services.service';
 import { timer } from 'rxjs';
 
 @Component({
@@ -10,6 +9,19 @@ import { timer } from 'rxjs';
 })
 
 export class ReporteComponent implements OnInit {
+<<<<<<< .mine
+
+
+
+
+
+=======
+  reporte: Reporte;
+  RepEliminado: Reporte;
+  reportes: Reporte[];
+  contador: number = 0;
+  trobat = false;
+>>>>>>> .theirs
 
   public reporte:Reporte;
   public RepEliminado:Reporte;
@@ -18,22 +30,31 @@ export class ReporteComponent implements OnInit {
   public trobat = false;
   public timer;
 
+<<<<<<< .mine
 
   @Input()datosProyecto: string[];
+=======
+  @Input() datosProyecto: string[];
 
-  constructor(private reportesService:ServicesService) { }
+>>>>>>> .theirs
+
+  constructor(private reportesService: ServicesService) {
+  }
 
   ngOnInit() {   
    this.reportes = this.reportesService.getReportes(); 
   }
+
   convert(reporteAExportar) {
-    this.reportesService.convert(reporteAExportar)
+    this.reportesService.convert(reporteAExportar);
   }
-  
- 
-  onClick(reporteABorrar)
-  {  
-    this.reportes.splice(this.reportesService.buscarEnArrayRep(reporteABorrar,this.reportes), 1);
+
+  color(numero: number) {
+    console.log(numero);
+  }
+
+  onClick(reporteABorrar) {
+    this.reportes.splice(this.reportesService.buscarEnArrayRep(reporteABorrar, this.reportes), 1);
     this.reportesService.cambioDeEstado(reporteABorrar);
   }
 
